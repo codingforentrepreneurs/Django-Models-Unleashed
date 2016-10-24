@@ -4,10 +4,13 @@ from django.db import models
 class PostModel(models.Model):
     id          = models.BigAutoField(primary_key=True)
     active      = models.BooleanField(default=True) #empty in the database
-    title       = models.CharField(max_length=240)
+    title       = models.CharField(max_length=240, verbose_name='Post title')
     content     = models.TextField(null=True, blank=True)
     #id = models.IntegerField(primary_key=True) #auto increments 1, 2, 3, 4, 
-    pass
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
 
 
 
