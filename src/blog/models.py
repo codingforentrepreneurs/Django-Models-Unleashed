@@ -1,7 +1,10 @@
 from django.db import models
+from django.db.models.signals import pre_save, post_save
 from django.utils.encoding import smart_text
 from django.utils import timezone 
 from django.utils.text import slugify
+
+
 # Create your models here.
 
 
@@ -25,8 +28,8 @@ class PostModel(models.Model):
     author_email    = models.EmailField(max_length=240, validators=[validate_justin], null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        if not self.slug and self.title:
-            self.slug = slugify(self.title)
+        # if not self.slug and self.title:
+        #     self.slug = slugify(self.title)
         super(PostModel, self).save(*args, **kwargs)
 
     class Meta:
@@ -39,6 +42,30 @@ class PostModel(models.Model):
 
     def __str__(self): #python 3
         return smart_text(self.title)
+
+
+def blog_post_model_pre_save_receiver(sender, instance, *args, **kwargs):
+    print("before save")
+    if not instance.slug and instance.title:
+        instance.slug = slugify(instance.title) 
+
+pre_save.connect(blog_post_model_pre_save_receiver, sender=PostModel)
+
+
+
+def blog_post_model_post_save_receiver(sender, instance, created, *args, **kwargs):
+    print("after save")
+    print(created)
+    if created:
+        if not instance.slug and instance.title:
+            instance.slug = slugify(instance.title)
+            instance.save()
+
+post_save.connect(blog_post_model_post_save_receiver, sender=PostModel)
+
+
+
+
 
 
 
