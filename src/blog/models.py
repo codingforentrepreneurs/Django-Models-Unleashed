@@ -4,6 +4,8 @@ from django.db import models
 class PostModel(models.Model):
     id          = models.BigAutoField(primary_key=True)
     active      = models.BooleanField(default=True) #empty in the database
+    title       = models.CharField(max_length=240)
+    content     = models.TextField(null=True, blank=True)
     #id = models.IntegerField(primary_key=True) #auto increments 1, 2, 3, 4, 
     pass
 
