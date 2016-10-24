@@ -1,3 +1,5 @@
+![Django Models Unleashed Logo](https://cfe-static.s3.amazonaws.com/media/django-models-unleashed/images/django_models_unleashed.png)
+
 # Django Models Unleashed
 
 Django Models Unleashed is reference series to teach you about Django models. Created using Django 1.10. Created by Team CFE @ http://joincfe.com.
@@ -28,3 +30,7 @@ Team CFE
 10 - Built-in Validation: *no significant code changes*
 
 [11 - Custom Field Validation](../../tree/7f35dc2f5860dcb60dfc5373735fa135288a7cdc)
+
+[12 - Overriding the Save Method](../../tree/7687c57958fbfd6c7411611cb75377a7fb030e59)
+
+[13 - Using Signals with Models](../../tree/6cc28af136f0f77724cc0ba0f9a9f867b7a8cfa3)
