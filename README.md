@@ -39,4 +39,13 @@ Team CFE
 
 [15 - Timestamp & DateTimeFields](../../tree/1cd82fdb36ed13531c07f5f496979a4104642183)
 
+[16 - Instance Methods & Properties](../../tree/7d9555834a7a939026365dc0ed028ca899ea73ea)
+
+[17 - Model Managers](../../tree/0a01db6c3cb05ac0b22aeaef57b9a315d26046fe)
+
+[18 - Custom QuerySet Methods](../../tree/3654524a131846ceb182e5c30f0ad35b7a6b9875)
+
+[19 - Models in the Python Shell](../../tree/1ff25a0a35812c967ad66f990882d49fe8032262)
+
+20 - Thank you!
 
